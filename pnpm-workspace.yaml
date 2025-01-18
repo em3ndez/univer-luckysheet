@@ -1,4 +1,8 @@
 packages:
-  # all packages in sub dirs of packages/ and Components/
-  - 'packages/**'
-  - 'examples/**'
+    - common/*
+    - examples
+    - examples-node
+    - mockdata
+    - packages-experimental/*
+    - packages/*
+    - tests/*

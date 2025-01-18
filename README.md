@@ -1,309 +1,305 @@
-# Univer
+<div align="center">
+
+<picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./docs/img/banner-light.png">
+    <img src="./docs/img/banner-dark.png" alt="Univer" width="400" />
+</picture>
+
+Univer: An Isomorphic Full-Stack Framework for Creating and Editing Spreadsheets, Docs, and Slides Across Web and Server <br />
+Extensible. High-performance. Embedded to your application.
+
+**English** | [简体中文][readme-zh-link] | [日本語][readme-ja-link] <br />
+[Official Site][official-site-link] | [Documentation][documentation-link] | [Online Playground][playground-link] | [Blog][blog-link]
+
+[![][github-license-shield]][github-license-link]
+[![][github-actions-shield]][github-actions-link]
+[![][github-stars-shield]][github-stars-link]
+[![][github-contributors-shield]][github-contributors-link] <br />
+[![][github-forks-shield]][github-forks-link]
+[![][github-issues-shield]][github-issues-link]
+[![][codecov-shield]][codecov-link]
+[![][codefactor-shield]][codefactor-link]
+[![][discord-shield]][discord-link]
+
+[![Trendshift][github-trending-shield]][github-trending-url]
+
+</div>
+
+<details open>
+<summary>
+<strong>Table of contents</strong>
+</summary>
+
+- [🌈 Highlights](#-highlights)
+- [✨ Features](#-features)
+    - [📊 Univer Sheet](#-univer-sheet)
+    - [📝 Univer Doc](#-univer-doc-under-development)
+    - [📽️ Univer Slide](#%EF%B8%8F-univer-slide-under-development)
+- [🌐 Internationalization](#-internationalization)
+- [👾 Showcase](#-showcase)<!-- - [📦 Ecosystem](#-ecosystem) -->
+- [💬 Community](#-community)
+- [🤝 Contribution](#-contribution)
+- [❤️ Sponsor](#%EF%B8%8F-sponsors)
+- [📄 License](#-license)
+
+</details>
+
+## 🌈 Highlights
+
+- 📈 Univer is designed to support **spreadsheets**, **documents** and **presentation**.
+- 🧙‍♀️ Univer is **isomorphic**. It can run both on browsers and Node.js (in the future, mobile devices as well), with the same API.
+- ⚙️ Univer is easily **embeddable**, allowing seamless integration into your applications.
+- 🎇 Univer is **powerful**, offering a wide range of features including **formulas**, **conditional formatting**, **data validation**, **filtering**, **collaborative editing**, **printing**, **import & export** and more features on the horizon.
+- 🔌 Univer is **highly extensible**, thanks to its *plug-in architecture* that makes it a delight for developers to implement their unique requirements on the top of Univer.
+- 💄 Univer is **highly customizable**, allowing you to personalize its appearance using *themes*. It also provides support for internationalization (i18n).
+- 🥤 Univer is **easy to work with**. The *Presets* & *Facade API* make it easy to hands on.
+- ⚡ Univer in **performant**.
+  - ✏️ Univer boasts an efficient *rendering engine* based on canvas, capable of rendering various document types flawlessly. The rendering engines supports advanced typesetting features such as *punctuation squeezing*, *text and image layout* and *scroll buffering*.
+  - 🧮 Univer incorporates a lightning-fast *formula engine* that can operate in Web Workers or even on the server side.
+- 🌌 Univer is a **highly integrated** system. Documents, spreadsheets and slides can interoperate with each others and even rendered on the same canvas, allowing information and data flow within Univer.
+
+## ✨ Features
+
+Univer provides a wide range of features for spreadsheets, documents and presentations. Here are some of the key features:
 
-English | [简体中文](./README-zh.md)
+### 📊 Univer Sheet
 
-## Introduction
+- **Core Features**: Univer supports core spreadsheet functionality, including cells, rows, columns, worksheets, and workbooks.
+- **Formulas**: Extensive support for various formulas, including mathematical, statistical, logical, text, date and time, lookup and reference, engineering, financial, and information formulas.
+- **Permissions**: Allows restricting access to specific elements.
+- **Number Formatting**: Supports formatting numbers based on specific criteria.
+- **Hyperlinks**: Enables linking to external websites, email addresses, and other locations within a spreadsheet.
+- **Floating Images**: Allows inserting images into a spreadsheet and positioning them anywhere on the sheet.
+- **Find & Replace**: Provides the ability to search for specific text within a spreadsheet and replace it with other text.
+- **Filtering**: Allows filtering data based on specific criteria.
+- **Sorting**: Allows sorting data based on specific criteria.
+- **Data Validation**: Supports restricting the type of data that can be entered into a cell.
+- **Conditional Formatting**: Supports applying formatting to cells based on specific criteria.
+- **Comments**: Enables adding comments to cells to provide additional information.
+- **Cross-highlighting**: Supports displaying cross-highlighting in spreadsheets to help users quickly locate selected cells.
+- **Pivot Tables**[^1]: Supports pivot tables, allowing users to summarize and analyze data.
+- **Collaborative Editing**[^1]: Supports multiple users editing a spreadsheet simultaneously. File history and recovering are also provided.
+- **Printing**[^1]: Allows printing a spreadsheet or exporting it to PDF.
+- **Import & Export**[^1]: Support for importing and exporting data in XLSX.
+- **Charts**[^2]: Third-party chart support via [VChart][vchart-link].
 
-Univer is an open source collabrative solution,  which aims to empower the collaboration capability into all systems. With Univer, users can synchronously edit the file content, making files flowing smoothly within different types of systems and avoid downloading and uploading Microsoft Office files anymore.
+### 📝 Univer Doc (beta)
 
-We provide javascript part of code in the repository, including a canvas-based framework for building documents, spreadsheets, slides.
+- **Core Features**: Univer supports core document features, including paragraphs, headings, lists, superscript, subscript, and more.
+- **Lists**: Supports ordered lists, unordered lists, and task lists.
+- **Hyperlinks**: Supports inserting links to external websites, email addresses, and other locations within a document.
+- **Floating Images**: Allows inserting images into a document and supporting text and image layout.
+- **Headers & Footers**: Allows adding headers and footers to a document.
+- **Comments**: Enables adding comments to a document to provide additional information.
+- **Import**[^1]: Supports importing data in DOCX format.
+- **Collaborative Editing**[^1]: Supports multiple users editing a document simultaneously.
 
-> ⚠️ This project is still in development, only for testing and learning, not for production
+### 📽️ Univer Slide (Under Development)
 
-## Demo
+- **Core Features**: Univer will support core presentation features, including slides, shapes, text, images, and more.
 
--   [Univer Demo](https://dream-num.github.io/univer-demo/)
+## 🌐 Internationalization
 
-## Development
+Univer supports multiple languages, including:
 
-### Requirements
+- `zh-CN`
+- `zh-TW`
+- `en-US`
+- `ru-RU`
+- `vi-VN`
+- `fa-IR`
 
-- [node.js](https://nodejs.org) version 16.20.0
-- [pnpm](https://pnpm.io) version 8.6.2
+`zh-CN` and `en-US` are officially supported, while the others are contributed and maintained by the community.
 
-### Installation
+You can add the language you want by [Using Custom Locales](https://univer.ai/guides/sheet/getting-started/i18n#using-custom-locales). You can also help us add new language support by referring to the [contribution guide](./CONTRIBUTING.md).
 
-```
-git clone http://github.com/dream-num/univer
-cd univer
-npm i -g pnpm # MacOS : sudo npm i -g pnpm
-pnpm i
-```
+## 👾 Showcase
 
-### Development
+You can find all the examples in the [Univer Examples](https://univer.ai/examples).
 
-Start concurrently
+| **📊 Spreadsheets** | **📊 Multi-instance** | **📊 Uniscript** |
+| :---: | :---: | :---: |
+| [![][examples-preview-0]][examples-link-0] | [![][examples-preview-1]][examples-link-1] | [![][examples-preview-2]][examples-link-2] |
+| **📊 Big data** | **📊 Collaboration** | **📊 Collaboration Playground** |
+| [![][examples-preview-3]][examples-link-3] | [![][examples-preview-4]][examples-link-4] | [![][examples-preview-5]][examples-link-5] |
+| **📊 Import & Export** | **📊 Printing** | **📝 Documents** |
+| [![][examples-preview-6]][examples-link-6] | [![][examples-preview-7]][examples-link-7] | [![][examples-preview-8]][examples-link-8] |
+| **📝 Multi-instance** | **📝 Uniscript** | **📝 Big data** |
+| [![][examples-preview-9]][examples-link-9] | [![][examples-preview-10]][examples-link-10] | [![][examples-preview-11]][examples-link-11] |
+| **📝 Collaboration** | **📝 Collaboration Playground** | **📽️ Presentations** |
+| [![][examples-preview-12]][examples-link-12] | [![][examples-preview-13]][examples-link-13] | [![][examples-preview-14]][examples-link-14] |
+| **📊 Zen Editor** | **Univer Workspace (SaaS version)** | &nbsp; |
+| [![][examples-preview-15]][examples-link-15] | [![][examples-preview-16]][examples-link-16] | &nbsp; |
 
-```bash
-npm run dev
-```
+<!-- ## 📦 Ecosystem
 
-Start sheets
+Univer has a rich ecosystem that includes a wide range of tools and resources to help you get started with Univer: -->
 
-```bash
-npm run dev:sheet
-```
-
-Start docs
-
-```bash
-npm run dev:doc
-```
-
-Start slides
-
-```bash
-npm run dev:slide
-```
-
-For more development tutorials, please refer to [Contribution Guide](./.github/contributing.md).
-
-## Community
-
-Welcome to join our [Discord community](https://discord.gg/z3NKNT6D2f).
-
-
-## Issues
-
-Please file an issue at [Issues](http://github.com/dream-num/univer/issues).
-
-## Stargazers
-
-[![Stargazers repo roster for @dream-num/univer](https://reporoster.com/stars/dream-num/univer)](https://github.com/dream-num/univer/stargazers)
-
-## Architecture
-
-Univer is written in typescript and designed according to the plug-in architecture. The functions outside the core are developed in the form of plug-ins. In the future, a plug-in market will be built to meet more personalized needs
-![image](./docs/source/overall.png)
-
-## Rendering engine
-
-Univer sheet, document, and slide adopt the same rendering engine architecture, which abstracts the application into text flow, table, canvas, and core part triggers rendering, and object is the renderer.
-![image](./docs/source/Render%20Engine.png)
-
-1. Achieve the nesting and operation between applications.
-2. Sheet cells support embedding doc text
-3. Support inserting sheet, doc, slide in slide
-
-|     slide 10-layer embedding      |         Sheet in slide and doc in cell         |   wrap text around a picture    |
-| :-------------------------------: | :--------------------------------------------: | :-----------------------------: |
-| ![image](./docs/source/Slide.png) | ![image](./docs/source/Sheet%20in%20slide.png) | ![image](./docs/source/doc.png) |
-
-## Formula engine
-
-Univer formula engine, supports asynchronous calculation, lambda function and range naming
-
-![image](./docs/source/Formula%20Engine.png)
-<!--
-## Development Plan
-
-### Sheets
-
-> The goal of the first phase, [consistent with the function of luckysheet2.0 version](https://dream-num.github.io/LuckysheetDocs/guide/#features)
-
-##### 🛠️Formatting
-
--   **Styling** `done`
--   **Conditional formatting** `2023Q1`
--   **Align or rotate text** `done`
--   **Support text truncation, overflow, automatic line wrapping** `done`
--   **Data types** `done`
-    -   **currency, percentages, decimals, dates**
-    -   **Custom**
--   **Cell segmentation style** `done`
-
-##### 🧬Cells
-
--   **Move cells by drag and dropping** `done`
--   **Fill handle** `2023Q1`
--   **Auto Fill Options** `2023Q1`
--   **Multiple selection** `2023Q1`
--   **Find and replace** `2023Q2`
--   **Location** `2023Q4`
--   **Merge cells** `done`
--   **Data validation** `2023Q2`
-
-##### 🖱️Row & columns
-
--   **Hide, Insert, Delete rows and columns** `2023Q1`
--   **Frozen rows and columns** `2023Q1`
--   **Split text** `2023Q4`
-
-##### 🔨Operation
-
--   **Undo/Redo** `2023Q1`
--   **Copy/Paste/Cut** `2023Q1`
--   **Hot key** `2023Q2`
--   **Format Painter** `2023Q4`
--   **Selection by drag and dropping** `2023Q1`
-
-##### ⚙️Formulas & functions
-
--   **formula engine (array formula, named, lambda)** `done`
--   **Built-in formulas** `2023Q1 - 2023Q4 finished according to the frequency of use`
--   **Remote formulas** `2023Q4`
--   **Custom** `2023Q4`
-
-##### 📐Tables
-
--   **Filters** `2023Q2`
--   **Sort** `2023Q2`
-
-##### 📈Pivot table
-
--   **Arrange fields** `2023Q3`
--   **Aggregation** `2023Q3`
--   **Filter data** `2023Q4`
--   **Drill down** `2023Q4`
--   **Create a PivotChart** `2023Q4`
-
-##### 📊Chart
-
--   **Basic 6 Chart** `2023Q4 - 2024Q2`
--   **Advanced Chart** `2024Q4`
--   **SparkLines** `2024Q2`
-
-##### ✍️Share
-
--   **Comments** `2023Q3`
--   **Collaborate** `2023Q3`
-
-##### 📚Insert object
-
--   **Insert picture** (JPG,PNG,SVG and so on) `2023Q3`
-
-##### ⚡Other
-
--   **Matrix operation** `2023Q4`
--   **Screenshot** `2023Q4`
--   **Copy to** `2023Q3`
--   **EXCEL import/export** `2023Q1 - 2023Q4 Gradually enhance compatibility`
-
-> New feature
-
--   **Print** (Like excel print option, save to PDF) `2024Q2`
--   **Tree menu** (Just like the outline (group) function of excel) `2024Q1`
--   **Table new Features** (filter, slicer) `2024Q1`
--   **CSV,TXT import/export** (Specially adapted to Luckysheet) `2024Q1`
--   **Insert Shapes** ([Pen tool](https://github.com/mengshukeji/Pentool) Shapes) `2023Q2`
-
-### Docs
-
-#### 💌 Write & edit
-
--   **Add and edit text** `2023Q1`
--   **Find and replace text** `2023Q4`
--   **Check grammar, spelling, and more** `2024Q2`
--   **Show word count** `2023Q1`
--   **Insert and remove hyperlinks** `2023Q2`
-
-#### 🛀 Format text
-
--   **Add and format text** `2023Q1`
--   **Create a bulleted or numbered list** `2023Q1`
--   **Change the line spacing** `2023Q1`
--   **Apply styles** `2023Q1`
--   **Apply themes** `2024Q1`
-
-#### 🗺️ Lay out pages
-
--   **Change margins** `2023Q1`
--   **Create newsletter columns** `2023Q1`
--   **Change page orientation to landscape or portrait** `2023Q2`
--   **Add a border to a page** `2023Q4`
--   **Insert a header or footer** `2023Q2`
--   **Insert page numbers** `2023Q2`
--   **Insert a page break** `2023Q2`
--   **Insert a table of contents** `2024Q2`
-
-#### 🧭 Lay out pages
-
--   **Insert a table** `2023Q2`
--   **Insert pictures** `2023Q1`
--   **Insert icons** `2023Q3`
--   **Insert WordArt** `2024Q3`
--   **Insert a watermark** `2023Q2`
--   **Show the ruler** `2023Q3`
--   **Rotate a picture or shape** `2023Q1`
--   **Wrap text around a picture in Word** `2023Q1`
-
-#### 🛎️ For school
-
--   **Write an equation or formula** `2024Q2`
--   **Indent the first line of a paragraph** `2023Q1`
--   **Double-space the lines in a document** `2023Q1`
-
-#### 🧳 Edit & print &
-
--   **Convert or save to PDF** `2024Q4`
--   **Edit a PDF** `2024Q4`
--   **Print your document** `2024Q4`
--   **Collaborate** `2023Q4`
--   **Comment** `2023Q4`
--   **mobile device** `2024Q4`
-
-#### 🕰️ Other
-
--   **Insert a Sheet** `2023Q2`
--   **Insert a Slide** `2023Q2`
--   **Word import/export** `2023Q4 - 2024Q4 Gradually enhance compatibility`
-
-### Slides
-
-#### 📻 Slides & layouts
-
--   **Slide master** `2023Q3`
--   **Apply a slide layout** `2023Q3`
--   **Add color and design with Themes** `2023Q4`
--   **landscape and portrait** `2023Q4`
--   **Organize slides into sections** `2023Q4`
--   **Create, merge, and group objects on a slide** `2023Q2`
--   **Rotate or flip an object** `2023Q2`
--   **Change the order** `2023Q2`
-
-#### 📱 Text & tables
-
--   **WordArt** `2024Q3`
--   **Hyperlink** `2023Q3`
--   **Check spelling** `2024Q4`
--   **Table** `2023Q2`
--   **Add slide numbers, page numbers, or the date and time** `2023Q4`
--   **Set text direction and position in a shape or text box** `2023Q3`
-
-#### 📀 Pictures & graphics
-
--   **Insert a picture** `2023Q1`
--   **Edit pictures** `2024Q2`
--   **SmartArt** `2024Q2`
--   **Put a background picture** `2023Q2`
--   **Chart** `2023Q4 - 2024Q2`
--   **Shape** `2023Q2`
--   **Insert icons** `2023Q2`
-
-#### 🧮 Present slideshows
-
--   **Presenter view** `2023Q2`
--   **Speaker notes** `2023Q4`
--   **Rehearse and time the delivery of a presentation** `2024Q4`
--   **Record a slide show** `2024Q4`
--   **Print your PowerPoint slides, handouts, or notes** `2024Q4`
--   **Self-running presentation** `2024Q4`
-
-#### 📒 Animation, video & audio
-
--   **Transitions between slides** `2024Q2`
--   **Animate text or objects** `2024Q1`
--   **Morph transition** `2024Q4`
--   **Video** `2023Q4`
--   **Audio** `2023Q4`
--   **Record screen** `2024Q4`
-
-#### 📫 Other
-
--   **Collaborate** `2023Q4`
--   **Convert a presentation as a video** `2024Q4`
--   **Save as PDF** `2024Q4`
--   **PowerPoint import/export** `2023Q4`
--   **Mobile** `2023Q4`
--   **insert Sheets** `2023Q2`
--   **insert documents** `2023Q2` -->
+## 🔗 Links
+
+- [Official Site](https://univer.ai)
+- [Presets Repository](https://github.com/dream-num/univer-presets)
+
+## 💬 Community
+
+[![][github-community-badge]][github-community-link] [![][discord-community-badge]][discord-community-link] [![][stackoverflow-community-badge]][stackoverflow-community-link]
+
+Univer is an inclusive and welcoming project. Please read our [Code of Conduct](./CODE_OF_CONDUCT.md) before participating in the community.
+
+Join the Univer community:
+
+- Chat with us and other developers on [Discord][discord-community-link].
+- Start a discussion on [GitHub Discussions][github-community-link].
+- Open a topic on [Stack Overflow][stackoverflow-community-link] and tag it with `univer`.
+
+You can also find Univer on:
+
+[Twitter][twitter-community-link] | [YouTube][youtube-community-link]
+
+## 🤝 Contribution
+
+We appreciate any kinds of contributing. You can submit [issues or feature requests](https://github.com/dream-num/univer/issues) to us. Please read our [contributing guide](./CONTRIBUTING.md) first.
+
+If you would like to contribute code to Univer, please refer to the contributing guide as well. It would guide you through the process of setting up the development environment and submitting a pull request.
+
+## ❤️ Sponsors
+
+The growth and development of the Univer project rely on the support of its backers and sponsors. If you are interested in supporting our project, we kindly invite you to consider becoming a sponsor. You can sponsor us through [Open Collective](https://opencollective.com/univer).
+
+Thanks to our sponsors, just part of them are listed here because of the space limit, ranking is no particular order:
+
+[![][sponsor-badge-0]][sponsor-link-0]
+[![][sponsor-badge-1]][sponsor-link-1]
+[![][sponsor-badge-2]][sponsor-link-2]
+[![][sponsor-badge-3]][sponsor-link-3]
+[![][sponsor-badge-4]][sponsor-link-4]
+[![][sponsor-badge-5]][sponsor-link-5]
+[![][sponsor-badge-6]][sponsor-link-6]
+
+[![][backer-badge-0]][backer-link-0]
+[![][backer-badge-1]][backer-link-1]
+[![][backer-badge-2]][backer-link-2]
+[![][backer-badge-3]][backer-link-3]
+[![][backer-badge-4]][backer-link-4]
+[![][backer-badge-5]][backer-link-5]
+[![][backer-badge-6]][backer-link-6]
+
+## 📄 License
+
+Copyright © 2021-2024 DreamNum Co,Ltd. All Rights Reserved.
+
+Licensed under the [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) license.
+
+<!-- Footnotes -->
+[^1]: These features are provided by the non-OSS version of Univer, which is free for commercial use and also includes paid upgrade plans.
+[^2]: VChart is a third-party library that provides chart support for Univer. You can find more information here: [univer-vchart-plugin][vchart-univer-link].
+
+<!-- Links -->
+[github-license-shield]: https://img.shields.io/github/license/dream-num/univer?style=flat-square
+[github-license-link]: ./LICENSE
+[github-actions-shield]: https://img.shields.io/github/actions/workflow/status/dream-num/univer/build.yml?style=flat-square
+[github-actions-link]: https://github.com/dream-num/univer/actions/workflows/build.yml
+[github-stars-link]: https://github.com/dream-num/univer/stargazers
+[github-stars-shield]: https://img.shields.io/github/stars/dream-num/univer?style=flat-square
+[github-trending-shield]: https://trendshift.io/api/badge/repositories/4376
+[github-trending-url]: https://trendshift.io/repositories/4376
+[github-contributors-link]: https://github.com/dream-num/univer/graphs/contributors
+[github-contributors-shield]: https://img.shields.io/github/contributors/dream-num/univer?style=flat-square
+[github-forks-link]: https://github.com/dream-num/univer/network/members
+[github-forks-shield]: https://img.shields.io/github/forks/dream-num/univer?style=flat-square
+[github-issues-link]: https://github.com/dream-num/univer/issues
+[github-issues-shield]: https://img.shields.io/github/issues/dream-num/univer?style=flat-square
+[codecov-shield]: https://img.shields.io/codecov/c/gh/dream-num/univer?token=aPfyW2pIMN&style=flat-square
+[codecov-link]: https://codecov.io/gh/dream-num/univer
+[codefactor-shield]: https://www.codefactor.io/repository/github/dream-num/univer/badge/dev?style=flat-square
+[codefactor-link]: https://www.codefactor.io/repository/github/dream-num/univer/overview/dev
+[discord-shield]: https://img.shields.io/discord/1136129819961217077?logo=discord&logoColor=FFFFFF&label=discord&color=5865F2&style=flat-square
+[discord-link]: https://discord.gg/z3NKNT6D2f
+
+[readme-en-link]: ./README.md
+[readme-zh-link]: ./README-zh.md
+[readme-ja-link]: ./README-ja.md
+
+[official-site-link]: https://univer.ai
+[documentation-link]: https://univer.ai/guides/sheet/introduction
+[playground-link]: https://univer.ai/playground
+[blog-link]: https://univer.ai/blog/post/this-is-univer
+
+[stackoverflow-community-link]: https://stackoverflow.com/questions/tagged/univer
+[stackoverflow-community-badge]: https://img.shields.io/badge/stackoverflow-univer-ef8236?labelColor=black&logo=stackoverflow&logoColor=white&style=for-the-badge
+[github-community-link]: https://github.com/dream-num/univer/discussions
+[github-community-badge]: https://img.shields.io/badge/github-univer-24292e?labelColor=black&logo=github&logoColor=white&style=for-the-badge
+[discord-community-link]: https://discord.gg/z3NKNT6D2f
+[discord-community-badge]: https://img.shields.io/discord/1136129819961217077?color=5865F2&label=discord&labelColor=black&logo=discord&logoColor=white&style=for-the-badge
+[twitter-community-link]: https://twitter.com/univerhq
+[youtube-community-link]: https://www.youtube.com/@dreamNum
+[zhihu-community-link]: https://www.zhihu.com/org/meng-shu-ke-ji
+[segmentfault-community-link]: https://segmentfault.com/u/congrongdehongjinyu
+[juejin-community-link]: https://juejin.cn/user/4312146127850733
+
+[sponsor-link-0]: https://opencollective.com/univer/sponsor/0/website
+[sponsor-link-1]: https://opencollective.com/univer/sponsor/1/website
+[sponsor-link-2]: https://opencollective.com/univer/sponsor/2/website
+[sponsor-link-3]: https://opencollective.com/univer/sponsor/3/website
+[sponsor-link-4]: https://opencollective.com/univer/sponsor/4/website
+[sponsor-link-5]: https://opencollective.com/univer/sponsor/5/website
+[sponsor-link-6]: https://opencollective.com/univer/sponsor/6/website
+[sponsor-badge-0]: https://opencollective.com/univer/sponsor/0/avatar.svg
+[sponsor-badge-1]: https://opencollective.com/univer/sponsor/1/avatar.svg
+[sponsor-badge-2]: https://opencollective.com/univer/sponsor/2/avatar.svg
+[sponsor-badge-3]: https://opencollective.com/univer/sponsor/3/avatar.svg
+[sponsor-badge-4]: https://opencollective.com/univer/sponsor/4/avatar.svg
+[sponsor-badge-5]: https://opencollective.com/univer/sponsor/5/avatar.svg
+[sponsor-badge-6]: https://opencollective.com/univer/sponsor/6/avatar.svg
+[backer-link-0]: https://opencollective.com/univer/backer/0/website
+[backer-link-1]: https://opencollective.com/univer/backer/1/website
+[backer-link-2]: https://opencollective.com/univer/backer/2/website
+[backer-link-3]: https://opencollective.com/univer/backer/3/website
+[backer-link-4]: https://opencollective.com/univer/backer/4/website
+[backer-link-5]: https://opencollective.com/univer/backer/5/website
+[backer-link-6]: https://opencollective.com/univer/backer/6/website
+[backer-badge-0]: https://opencollective.com/univer/backer/0/avatar.svg
+[backer-badge-1]: https://opencollective.com/univer/backer/1/avatar.svg
+[backer-badge-2]: https://opencollective.com/univer/backer/2/avatar.svg
+[backer-badge-3]: https://opencollective.com/univer/backer/3/avatar.svg
+[backer-badge-4]: https://opencollective.com/univer/backer/4/avatar.svg
+[backer-badge-5]: https://opencollective.com/univer/backer/5/avatar.svg
+[backer-badge-6]: https://opencollective.com/univer/backer/6/avatar.svg
+
+[vchart-link]: https://github.com/VisActor/VChart
+[vchart-univer-link]: https://github.com/VisActor/univer-vchart-plugin
+
+[examples-preview-0]: ./docs/img/examples-sheets.gif
+[examples-preview-1]: ./docs/img/examples-sheets-multi.gif
+[examples-preview-2]: ./docs/img/examples-sheets-uniscript.gif
+[examples-preview-3]: ./docs/img/examples-sheets-big-data.gif
+[examples-preview-4]: ./docs/img/pro-examples-sheets-collaboration.gif
+[examples-preview-5]: ./docs/img/pro-examples-sheets-collaboration-playground.gif
+[examples-preview-6]: ./docs/img/pro-examples-sheets-exchange.gif
+[examples-preview-7]: ./docs/img/pro-examples-sheets-print.gif
+[examples-preview-8]: ./docs/img/examples-docs.gif
+[examples-preview-9]: ./docs/img/examples-docs-multi.gif
+[examples-preview-10]: ./docs/img/examples-docs-uniscript.gif
+[examples-preview-11]: ./docs/img/examples-docs-big-data.gif
+[examples-preview-12]: ./docs/img/pro-examples-docs-collaboration.gif
+[examples-preview-13]: ./docs/img/pro-examples-docs-collaboration-playground.gif
+[examples-preview-14]: ./docs/img/examples-slides.gif
+[examples-preview-15]: ./docs/img/zen-mode.gif
+[examples-preview-16]: ./docs/img/univer-workspace-drag-chart.gif
+[examples-link-0]: https://univer.ai/examples/sheets/
+[examples-link-1]: https://univer.ai/examples/sheets-multi/
+[examples-link-2]: https://univer.ai/examples/sheets-uniscript/
+[examples-link-3]: https://univer.ai/examples/sheets-big-data/
+[examples-link-4]: https://univer.ai/pro/examples/sheets-collaboration/
+[examples-link-5]: https://univer.ai/pro/examples/sheets-collaboration-playground/
+[examples-link-6]: https://univer.ai/pro/examples/sheets-exchange/
+[examples-link-7]: https://univer.ai/pro/examples/sheets-print/
+[examples-link-8]: https://univer.ai/examples/docs/
+[examples-link-9]: https://univer.ai/examples/docs-multi/
+[examples-link-10]: https://univer.ai/examples/docs-uniscript/
+[examples-link-11]: https://univer.ai/examples/docs-big-data/
+[examples-link-12]: https://univer.ai/pro/examples/docs-collaboration/
+[examples-link-13]: https://univer.ai/pro/examples/docs-collaboration-playground/
+[examples-link-14]: https://univer.ai/examples/slides/
+[examples-link-15]: https://univer.ai/guides/sheet/features/zen-editor
+[examples-link-16]: https://youtu.be/kpV0MvQuFZA

@@ -1,16 +1,25 @@
 {
     "$schema": "https://turbo.build/schema.json",
-    "pipeline": {
-        "jest": {
+    "extends": [
+        "//"
+    ],
+    "tasks": {
+        "test": {
         },
-        "esbuild": {
-        },
-        "esbuild:demo": {
+
+        "coverage": {
             "cache": false
         },
+
+        "build": {
+        },
+
+        "build:e2e": {},
+
         "dev:demo": {
-            "cache": false,
-            "persistent": true
-        }
+            "cache": false
+        },
+
+        "lint:types": {}
     }
 }

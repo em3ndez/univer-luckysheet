@@ -1,67 +1,58 @@
 name: 🧪 CI Test
 
 on:
-  push:
-    branches: [main, dev]
-  pull_request:
-    branches: [main, dev]
+    push:
+        branches:
+            - dev
+    pull_request:
+        branches:
+            - dev
 
 permissions:
-  contents: read
+    contents: read
+    pull-requests: write
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+    test:
+        runs-on: ubuntu-latest
 
-    env:
-      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+            - name: Setup Node.js
+              uses: ./.github/actions/setup-node
 
-      - name: Install Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
+            - name: 🩺 Run test
+              run: pnpm coverage
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-          run_install: false
+            - name: 🧬 Report coverage
+              uses: codecov/codecov-action@v3
+              env:
+                  CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
-      - name: Get pnpm store directory
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+    eslint:
+        runs-on: ubuntu-latest
 
-      - name: Setup pnpm cache
-        uses: actions/cache@v3
-        with:
-          path: ${{ env.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
 
-      - name: Setup ESLint cache
-        uses: actions/cache@v3
-        with:
-          path: .eslintcache
-          key: |
-            ${{ runner.os }}-eslint-${{ hashFiles('.eslintrc.js') }}
-          restore-keys: |
-            ${{ runner.os }}-eslint-
+            - name: Setup Node.js
+              uses: ./.github/actions/setup-node
 
-      - name: Install dependencies
-        run: pnpm install
+            - name: 🌡️ Run ESLint
+              run: pnpm lint --quiet
 
-      - name: 🩺 Run Test
-        run: pnpm run test
+    typecheck:
+        runs-on: ubuntu-latest
 
-      - name: 🌡️ Run ESLint
-        run: pnpm run lint
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
 
-      - name: 🧼 Type checking
-        run: npx tsc --noEmit
+            - name: Setup Node.js
+              uses: ./.github/actions/setup-node
+
+            - name: 🧼 Type checking
+              run: pnpm lint:types
